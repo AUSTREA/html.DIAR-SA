@@ -1,0 +1,261 @@
+body {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    background: #f4f4f4;
+    margin: 0;
+    padding: 40px;
+    color: #222;
+}
+
+.factura {
+    background: #fff;
+    max-width: 900px;
+    margin: auto;
+    padding: 50px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+/* HEADER */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid #999;
+    padding-bottom: 20px;
+}
+
+
+
+
+.logo img {
+    max-width: 400px;
+    height: auto;
+    display: block;
+    align-items: center;
+}
+
+
+
+.titulo {
+    text-align: right;
+    flex-grow: 1;
+    padding-left: 20px;
+}
+
+.titulo h1 {
+    margin: 0;
+    font-size: 26px;
+    letter-spacing: 4px;
+    font-weight: 300;
+}
+
+.titulo p {
+    margin: 4px 0;
+    font-size: 12px;
+    color: #555;
+}
+
+/* EMPRESA */
+.empresa {
+    margin-top: 25px;
+    font-size: 13px;
+    line-height: 1.6;
+    border-left: 3px solid #000;
+    padding-left: 12px;
+}
+
+/* CLIENTE */
+.cliente {
+    margin-top: 25px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    font-size: 13px;
+}
+
+.cliente strong {
+    letter-spacing: 1px;
+    font-size: 12px;
+    color: #555;
+}
+
+/* TABLA */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+    font-size: 13px;
+}
+
+th {
+    text-align: left;
+    padding: 10px;
+    border-bottom: 2px solid #000;
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-size: 12px;
+}
+
+td {
+    padding: 12px 10px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+/* TOTALES */
+.totales {
+    margin-top: 30px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.totales table {
+    width: 280px;
+}
+
+.totales td {
+    padding: 6px;
+}
+
+.total-final {
+    border-top: 2px solid #000;
+    font-weight: bold;
+}
+
+/* LETRAS */
+.letras {
+    margin-top: 25px;
+    font-size: 12px;
+    color: #444;
+    border-top: 1px dashed #bbb;
+    padding-top: 10px;
+}
+
+/* FOOTER */
+.footer {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.qr {
+    width: 110px;
+    height: 110px;
+    border: 1px solid #bbb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    color: #777;
+}
+
+.firma {
+    text-align: center;
+    font-size: 12px;
+    color: #444;
+}
+
+.firma-linea {
+    width: 220px;
+    border-top: 1px solid #000;
+    margin: 40px auto 5px;
+}
+
+/* DETALLE ESTÉTICO */
+.linea-superior {
+    width: 50px;
+    height: 3px;
+    background: #000;
+    margin-bottom: 10px;
+}
+.layout {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* Panel izquierdo */
+.acciones {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #007BFF;
+  padding: 20px;
+  border-radius: 8px;
+  color: white;
+  width: 220px;
+  height: auto;
+}
+
+.acciones h1 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.acciones button {
+  margin-bottom: 10px;
+  padding: 10px 12px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  width: 100%;
+  background-color: #0056b3;
+  color: white;
+  cursor: pointer;
+}
+
+.acciones button:hover {
+  background-color: #004494;
+}
+
+.qr-panel {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #fff;
+  color: #000;
+  border: 2px solid #000;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Factura derecha */
+.factura {
+  flex: 1;
+  max-width: 800px;
+  background-color: #fff;
+  padding: 20px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+}
+
+/* Impresión */
+@media print {
+  .layout {
+    display: block;
+  }
+
+  .acciones {
+    display: none;
+  }
+
+  .factura {
+    max-width: none;
+    border: none;
+    padding: 0;
+  }
+}
+.qr-panel {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #fff;
+  border: 2px solid #000;
+  width: 100%;
+  text-align: center;
+}
+
+.qr-img {
+  width: 150px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}

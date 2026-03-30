@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Factura DiAR</title>
+  <link rel="stylesheet" href="estilo/estilo.css">
+  <script src="funciones/funciones.js" defer></script>
+</head>
+<body>
+
+  <div class="layout">
+    <!-- PANEL IZQUIERDO -->
+    <div class="acciones">
+      <h1>FACTURA DIAR</h1>
+
+      <!-- Botón que activa el input -->
+      <button onclick="document.getElementById('archivoXML').click()">CARGAR</button>
+
+      <!-- Input oculto que se activa con el botón -->
+      <input type="file" id="archivoXML" accept=".xml" style="display:none" onchange="cargarXML()">
+
+      <button onclick="descargarPDF()">CARTA</button>
+      <div class="qr-panel">QR DIAR <APARTE></APARTE>
+           <img src="PICTURES/WhatsApp Image 2026-03-28 at 1.01.48 PM.jpeg" alt="QR DIAR" class="qr-img">
+
+      </div>
+    </div>
+
+    <!-- FACTURA DERECHA -->
+    <div class="factura" id="factura">
+      <!-- HEADER -->
+      <div class="header">
+        <div>
+          <div class="linea-superior"></div>
+          <div class="logo">
+            <img src="PICTURES/WhatsApp Image 2026-03-28 at 10.50.03 AM.jpeg" alt="DiAR Arquitectura" />
+            <p></p>
+          </div>
+        </div>
+        <div class="titulo">
+          <h1>FACTURA</h1>
+          <p id="autorizacion">No. Autorización: ______</p>
+          <p id="fecha">Fecha: ______</p>
+          <p id="hora">Hora: ______</p>
+        </div>
+      </div>
+
+      <!-- EMPRESA -->
+      <div class="empresa">
+  <strong id="nombreEmisor">DiAR Arquitectura Publicitaria</strong><br>
+  NIT: <span id="nitEmisor">1234567-8</span><br>
+  Dirección: <span id="direccionEmisor">3 AVENIDA 5-04 COLONIA SAN JOSE, Zona 2, VILLA NUEVA, GUATEMALA</span>
+</div>
+
+
+
+      <!-- CLIENTE -->
+      <div class="cliente">
+  <strong>DATOS DEL CLIENTE</strong><br><br>
+  Nombre: <span id="nombreReceptor">N/A</span><br>
+  NIT: <span id="nitReceptor">N/A</span><br>
+  Dirección: <span id="direccionReceptor">N/A</span>
+</div>
+
+      <!-- TABLA -->
+      <table id="tabla-servicios">
+        <thead>
+          <tr>
+            <th>CANT.</th>
+            <th>DESCRIPCIÓN DEL SERVICIO ARQUITECTÓNICO</th>
+            <th>COSTO (Q)</th>
+            <th>SUBTOTAL (Q)</th>
+          </tr>
+        </thead>
+        <tbody id="items">
+          <tr>
+            <td><input type="number" class="cant"></td>
+            <td><input type="text" class="desc"></td>
+            <td><input type="number" class="costo"></td>
+            <td class="subtotal"></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- TOTALES -->
+      <div class="totales">
+        <table>
+          <tr>
+            <td>Subtotal</td>
+            <td id="subtotal">Q 0.00</td>
+          </tr>
+          <tr>
+            <td>IVA 12%</td>
+            <td id="iva">Q 0.00</td>
+          </tr>
+          <tr class="total-final">
+            <td>Total</td>
+            <td id="total">Q 0.00</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="letras">
+        Total en letras: <span id="total-letras">Cero quetzales</span>
+      </div>
+
+      <!-- FOOTER -->
+      <div class="footer">
+        <div class="qr" id="qr">OK SAT</div>
+        <div class="firma">
+          <div class="firma-linea"></div>
+          Firma autorizada
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- qr de la-->
+</body>
+</html>
