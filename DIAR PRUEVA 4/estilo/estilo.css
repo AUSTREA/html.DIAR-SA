@@ -1,3 +1,8 @@
+/* GLOBAL */
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: "Helvetica Neue", Arial, sans-serif;
     background: #f4f4f4;
@@ -6,12 +11,71 @@ body {
     color: #222;
 }
 
+/* LAYOUT GENERAL */
+.layout {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+/* PANEL IZQUIERDO */
+.acciones {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #007BFF;
+    padding: 20px;
+    border-radius: 8px;
+    color: white;
+    width: 220px;
+}
+
+.acciones h1 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.acciones button {
+    margin-bottom: 10px;
+    padding: 10px 12px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    width: 100%;
+    background-color: #0056b3;
+    color: white;
+    cursor: pointer;
+}
+
+.acciones button:hover {
+    background-color: #004494;
+}
+
+.qr-panel {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #fff;
+    color: #000;
+    border: 2px solid #000;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+}
+
+.qr-img {
+    width: 150px;
+    height: auto;
+    display: block;
+    margin: 10px auto 0;
+}
+
+/* FACTURA DERECHA */
 .factura {
-    background: #fff;
-    max-width: 900px;
-    margin: auto;
+    flex: 1;
+    max-width: 800px;
+    background-color: #fff;
     padding: 50px;
-    border: 1px solid #ddd;
+    border: 1px solid #ccc;
     box-sizing: border-box;
 }
 
@@ -24,17 +88,11 @@ body {
     padding-bottom: 20px;
 }
 
-
-
-
 .logo img {
     max-width: 400px;
     height: auto;
     display: block;
-    align-items: center;
 }
-
-
 
 .titulo {
     text-align: right;
@@ -167,95 +225,20 @@ td {
     background: #000;
     margin-bottom: 10px;
 }
-.layout {
-  display: flex;
-  gap: 20px;
-  align-items: flex-start;
-}
 
-/* Panel izquierdo */
-.acciones {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #007BFF;
-  padding: 20px;
-  border-radius: 8px;
-  color: white;
-  width: 220px;
-  height: auto;
-}
-
-.acciones h1 {
-  font-size: 20px;
-  margin-bottom: 15px;
-}
-
-.acciones button {
-  margin-bottom: 10px;
-  padding: 10px 12px;
-  font-size: 14px;
-  border: none;
-  border-radius: 4px;
-  width: 100%;
-  background-color: #0056b3;
-  color: white;
-  cursor: pointer;
-}
-
-.acciones button:hover {
-  background-color: #004494;
-}
-
-.qr-panel {
-  margin-top: 20px;
-  padding: 10px;
-  background-color: #fff;
-  color: #000;
-  border: 2px solid #000;
-  width: 100%;
-  text-align: center;
-  font-weight: bold;
-}
-
-/* Factura derecha */
-.factura {
-  flex: 1;
-  max-width: 800px;
-  background-color: #fff;
-  padding: 20px;
-  box-sizing: border-box;
-  border: 1px solid #ccc;
-}
-
-/* Impresión */
+/* IMPRESIÓN */
 @media print {
-  .layout {
-    display: block;
-  }
+    .layout {
+        display: block;
+    }
 
-  .acciones {
-    display: none;
-  }
+    .acciones {
+        display: none;
+    }
 
-  .factura {
-    max-width: none;
-    border: none;
-    padding: 0;
-  }
-}
-.qr-panel {
-  margin-top: 20px;
-  padding: 10px;
-  background-color: #fff;
-  border: 2px solid #000;
-  width: 100%;
-  text-align: center;
-}
-
-.qr-img {
-  width: 150px;
-  height: auto;
-  display: block;
-  margin: 0 auto;
+    .factura {
+        max-width: none;
+        border: none;
+        padding: 0;
+    }
 }
