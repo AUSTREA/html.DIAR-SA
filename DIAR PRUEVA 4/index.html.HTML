@@ -10,32 +10,34 @@
 <body>
 
   <div class="layout">
+
     <!-- PANEL IZQUIERDO -->
-    <div class="acciones">
+    <aside class="acciones">
       <h1>FACTURA DIAR</h1>
 
       <!-- Botón que activa el input -->
-      <button onclick="document.getElementById('archivoXML').click()">CARGAR</button>
+      <button type="button" onclick="document.getElementById('archivoXML').click()">CARGAR XML</button>
 
       <!-- Input oculto que se activa con el botón -->
       <input type="file" id="archivoXML" accept=".xml" style="display:none" onchange="cargarXML()">
 
-      <button onclick="descargarPDF()">CARTA</button>
-      <div class="qr-panel">QR DIAR <APARTE></APARTE>
-           <img src="PICTURES/WhatsApp Image 2026-03-28 at 1.01.48 PM.jpeg" alt="QR DIAR" class="qr-img">
+      <button type="button" onclick="descargarPDF()">DESCARGAR PDF</button>
 
+      <div class="qr-panel">
+        <p>QR DIAR</p>
+        <img src="PICTURES/WhatsApp Image 2026-03-28 at 1.01.48 PM.jpeg" alt="QR DIAR" class="qr-img">
       </div>
-    </div>
+    </aside>
 
     <!-- FACTURA DERECHA -->
-    <div class="factura" id="factura">
+    <section class="factura" id="factura">
+      
       <!-- HEADER -->
-      <div class="header">
+      <header class="header">
         <div>
           <div class="linea-superior"></div>
           <div class="logo">
             <img src="PICTURES/WhatsApp Image 2026-03-28 at 10.50.03 AM.jpeg" alt="DiAR Arquitectura" />
-            <p></p>
           </div>
         </div>
         <div class="titulo">
@@ -44,26 +46,24 @@
           <p id="fecha">Fecha: ______</p>
           <p id="hora">Hora: ______</p>
         </div>
-      </div>
+      </header>
 
       <!-- EMPRESA -->
-      <div class="empresa">
-  <strong id="nombreEmisor">DiAR Arquitectura Publicitaria</strong><br>
-  NIT: <span id="nitEmisor">1234567-8</span><br>
-  Dirección: <span id="direccionEmisor">3 AVENIDA 5-04 COLONIA SAN JOSE, Zona 2, VILLA NUEVA, GUATEMALA</span>
-</div>
-
-
+      <section class="empresa">
+        <strong id="nombreEmisor">DiAR Arquitectura Publicitaria</strong><br>
+        NIT: <span id="nitEmisor">1234567-8</span><br>
+        Dirección: <span id="direccionEmisor">3 AVENIDA 5-04 COLONIA SAN JOSE, Zona 2, VILLA NUEVA, GUATEMALA</span>
+      </section>
 
       <!-- CLIENTE -->
-      <div class="cliente">
-  <strong>DATOS DEL CLIENTE</strong><br><br>
-  Nombre: <span id="nombreReceptor">N/A</span><br>
-  NIT: <span id="nitReceptor">N/A</span><br>
-  Dirección: <span id="direccionReceptor">N/A</span>
-</div>
+      <section class="cliente">
+        <strong>DATOS DEL CLIENTE</strong><br><br>
+        Nombre: <span id="nombreReceptor">N/A</span><br>
+        NIT: <span id="nitReceptor">N/A</span><br>
+        Dirección: <span id="direccionReceptor">N/A</span>
+      </section>
 
-      <!-- TABLA -->
+      <!-- TABLA DE SERVICIOS -->
       <table id="tabla-servicios">
         <thead>
           <tr>
@@ -75,16 +75,16 @@
         </thead>
         <tbody id="items">
           <tr>
-            <td><input type="number" class="cant"></td>
+            <td><input type="number" class="cant" min="0" value="0"></td>
             <td><input type="text" class="desc"></td>
-            <td><input type="number" class="costo"></td>
-            <td class="subtotal"></td>
+            <td><input type="number" class="costo" min="0" value="0"></td>
+            <td class="subtotal">0.00</td>
           </tr>
         </tbody>
       </table>
 
       <!-- TOTALES -->
-      <div class="totales">
+      <section class="totales">
         <table>
           <tr>
             <td>Subtotal</td>
@@ -99,24 +99,23 @@
             <td id="total">Q 0.00</td>
           </tr>
         </table>
-      </div>
+      </section>
 
       <div class="letras">
         Total en letras: <span id="total-letras">Cero quetzales</span>
       </div>
 
       <!-- FOOTER -->
-      <div class="footer">
+      <footer class="footer">
         <div class="qr" id="qr">OK SAT</div>
         <div class="firma">
           <div class="firma-linea"></div>
           Firma autorizada
         </div>
-      </div>
-    </div>
+      </footer>
+
+    </section>
   </div>
 
-
-  <!-- qr de la-->
 </body>
 </html>
