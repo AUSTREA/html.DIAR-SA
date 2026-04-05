@@ -1,3 +1,3 @@
-function abrirFactura(pagina) {
-  window.location.href = pagina;
+function abrirFactura(ruta) {
+  window.location.href = ruta;
 }
